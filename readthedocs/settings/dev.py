@@ -63,6 +63,9 @@ class CommunityDevSettings(CommunityBaseSettings):
 
 CommunityDevSettings.load_settings(__name__)
 
+import dj_database_url
+DATABASES['default'] =  dj_database_url.config()
+
 # from .local_settings import *
 
 # if not os.environ.get('DJANGO_SETTINGS_SKIP_LOCAL', False):
