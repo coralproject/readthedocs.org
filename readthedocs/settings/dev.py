@@ -66,6 +66,9 @@ CommunityDevSettings.load_settings(__name__)
 import dj_database_url
 DATABASES['default'] =  dj_database_url.config()
 
+import django_heroku
+django_heroku.settings(locals())
+
 # from .local_settings import *
 
 # if not os.environ.get('DJANGO_SETTINGS_SKIP_LOCAL', False):
