@@ -51,10 +51,19 @@ class CommunityDevSettings(CommunityBaseSettings):
         logging['disable_existing_loggers'] = False
         return logging
 
+    @property
+       def DATABASES(self):  # noqa
+           return {
+               'default': {
+                   'ENGINE': 'django.db.backends.sqlite3',
+                   'NAME': os.path.join(self.SITE_ROOT, 'dev.db'),
+               }
+           }
+
 
 CommunityDevSettings.load_settings(__name__)
 
-from .local_settings import *
+# from .local_settings import *
 
 # if not os.environ.get('DJANGO_SETTINGS_SKIP_LOCAL', False):
 #     try:
