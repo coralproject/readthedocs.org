@@ -21,7 +21,6 @@ contrib/supervisord.pid
 celerybeat-schedule.*
 deploy/.vagrant
 dist/*
-local_settings.py
 locks/*
 logs/*
 media/dash
