@@ -4,6 +4,6 @@ psycopg2==2.7.5 --no-binary psycopg2
 gunicorn==19.9.0
 pysolr==3.7.0
 django-redis-cache==1.7.1
-
+dj-database-url
 #For resizing images
 pillow
