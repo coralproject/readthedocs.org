@@ -12,15 +12,6 @@ class CommunityDevSettings(CommunityBaseSettings):
     PRODUCTION_DOMAIN = 'localhost:8000'
     WEBSOCKET_HOST = 'localhost:8088'
 
-    @property
-    def DATABASES(self):  # noqa
-        return {
-            'default': {
-                'ENGINE': 'django.db.backends.sqlite3',
-                'NAME': os.path.join(self.SITE_ROOT, 'dev.db'),
-            }
-        }
-
     DONT_HIT_DB = False
 
     ACCOUNT_EMAIL_VERIFICATION = 'none'

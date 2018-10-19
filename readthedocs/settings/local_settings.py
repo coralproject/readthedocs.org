@@ -1,5 +1,7 @@
 import os
 
+DEBUG = False
+
 SECRET_KEY = 'no really its a secret' 
 
 PRODUCTION_DOMAIN = 'talk-documentation.herokuapp.com:8000'
@@ -11,4 +13,5 @@ django_heroku.settings(locals())
 
 import dj_database_url
 db_from_env = dj_database_url.config(conn_max_age=600)
+
 DATABASES = {'default': db_from_env}
