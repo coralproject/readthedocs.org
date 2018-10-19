@@ -54,9 +54,11 @@ class CommunityDevSettings(CommunityBaseSettings):
 
 CommunityDevSettings.load_settings(__name__)
 
-if not os.environ.get('DJANGO_SETTINGS_SKIP_LOCAL', False):
-    try:
-        # pylint: disable=unused-wildcard-import
-        from .local_settings import *  # noqa
-    except ImportError:
-        pass
+from .local_settings import *
+
+# if not os.environ.get('DJANGO_SETTINGS_SKIP_LOCAL', False):
+#     try:
+#         # pylint: disable=unused-wildcard-import
+#           # noqa
+#     except ImportError:
+#         pass
