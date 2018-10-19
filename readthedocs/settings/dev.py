@@ -10,9 +10,9 @@ class CommunityDevSettings(CommunityBaseSettings):
 
     """Settings for local development"""
 
-    PRODUCTION_DOMAIN = 'localhost:8000'
-    WEBSOCKET_HOST = 'localhost:8088'
-    USE_SUBDOMAIN = True
+    PRODUCTION_DOMAIN = 'talk-documentation.herokuapp.com:8000'
+    WEBSOCKET_HOST = 'talk-documentation.herokuapp.com:8088'
+    # USE_SUBDOMAIN = True
 
     DONT_HIT_DB = False
 
