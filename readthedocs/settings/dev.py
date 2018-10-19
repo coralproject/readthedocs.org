@@ -63,11 +63,13 @@ CommunityDevSettings.load_settings(__name__)
 import dj_database_url
 DATABASES['default'] =  dj_database_url.config()
 
-SECRET_KEY = os.environ.get('SECRET_KEY')
+if os.environ.get('SECRET_KEY'):
+    SECRET_KEY = os.environ.get('SECRET_KEY')
+    DEBUG = False
+
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-# DEBUG = False
 # from .local_settings import *
 
 # if not os.environ.get('DJANGO_SETTINGS_SKIP_LOCAL', False):
