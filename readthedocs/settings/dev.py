@@ -66,8 +66,7 @@ CommunityDevSettings.load_settings(__name__)
 import dj_database_url
 DATABASES['default'] =  dj_database_url.config()
 
-import django_heroku
-django_heroku.settings(locals())
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # from .local_settings import *
 

@@ -6,5 +6,6 @@ pysolr==3.7.0
 django-redis-cache==1.7.1
 dj-database-url
 django_heroku
+whitenoise
 #For resizing images
 pillow
