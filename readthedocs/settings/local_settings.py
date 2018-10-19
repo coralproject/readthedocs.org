@@ -1,5 +1,5 @@
 import os
-print 'loading local settings'
+print('loading local settings')
 DEBUG = False
 
 SECRET_KEY = 'no really its a secret' 
