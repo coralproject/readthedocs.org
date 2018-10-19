@@ -4,6 +4,7 @@ import os
 
 from .base import CommunityBaseSettings
 
+print 'loading dev settings'
 
 class CommunityDevSettings(CommunityBaseSettings):
 
