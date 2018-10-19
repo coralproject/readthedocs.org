@@ -68,6 +68,8 @@ DATABASES['default'] =  dj_database_url.config()
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+SECRET_KEY = os.environ.get('SECRET_KEY')
+DEBUG = False
 # from .local_settings import *
 
 # if not os.environ.get('DJANGO_SETTINGS_SKIP_LOCAL', False):
