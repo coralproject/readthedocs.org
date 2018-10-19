@@ -52,13 +52,13 @@ class CommunityDevSettings(CommunityBaseSettings):
         return logging
 
     @property
-       def DATABASES(self):  # noqa
-           return {
-               'default': {
-                   'ENGINE': 'django.db.backends.sqlite3',
-                   'NAME': os.path.join(self.SITE_ROOT, 'dev.db'),
-               }
-           }
+    def DATABASES(self):  # noqa
+        return {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(self.SITE_ROOT, 'dev.db'),
+            }
+        }
 
 
 CommunityDevSettings.load_settings(__name__)
