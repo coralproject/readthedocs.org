@@ -8,7 +8,7 @@ PRODUCTION_DOMAIN = 'talk-documentation.herokuapp.com:8000'
 WEBSOCKET_HOST = 'talk-documentation.herokuapp.com:8088'
 
 import django_heroku
-django_heroku.settings(locals())
+
 
 
 import dj_database_url
@@ -17,3 +17,5 @@ import dj_database_url
 
 DATABASES['default'] =  dj_database_url.config()
 DATABASES['default']['ENGINE'] = 'django.db.backends.postgresql_psycopg2'
+
+django_heroku.settings(locals())
