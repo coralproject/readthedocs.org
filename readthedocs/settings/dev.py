@@ -10,8 +10,10 @@ class CommunityDevSettings(CommunityBaseSettings):
 
     """Settings for local development"""
 
-    PRODUCTION_DOMAIN = 'localhost:8000'
-    WEBSOCKET_HOST = 'localhost:8088'
+    PRODUCTION_DOMAIN = 'talk-documentation.herokuapp.com:8000'
+    WEBSOCKET_HOST = 'talk-documentation.herokuapp.com:8088'
+    # USE_SUBDOMAIN = True
+    READTHEDOCS = True
 
     DONT_HIT_DB = False
 
@@ -21,8 +23,8 @@ class CommunityDevSettings(CommunityBaseSettings):
 
     SLUMBER_USERNAME = 'test'
     SLUMBER_PASSWORD = 'test'  # noqa: ignore dodgy check
-    SLUMBER_API_HOST = 'http://127.0.0.1:8000'
-    PUBLIC_API_URL = 'http://127.0.0.1:8000'
+    SLUMBER_API_HOST = 'http://talk-documentation.herokuapp.com:8000'
+    PUBLIC_API_URL = 'http://talk-documentation.herokuapp.com:8000'
 
     BROKER_URL = 'redis://localhost:6379/0'
     CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
@@ -63,11 +65,13 @@ CommunityDevSettings.load_settings(__name__)
 import dj_database_url
 DATABASES['default'] =  dj_database_url.config()
 
-SECRET_KEY = os.environ.get('SECRET_KEY')
+if os.environ.get('SECRET_KEY'):
+    SECRET_KEY = os.environ.get('SECRET_KEY')
+    # DEBUG = False
+
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-# DEBUG = False
 # from .local_settings import *
 
 # if not os.environ.get('DJANGO_SETTINGS_SKIP_LOCAL', False):
