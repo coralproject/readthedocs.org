@@ -4,6 +4,7 @@ import os
 
 from .base import CommunityBaseSettings
 
+print('loading dev settings')
 
 class CommunityDevSettings(CommunityBaseSettings):
 
@@ -11,15 +12,6 @@ class CommunityDevSettings(CommunityBaseSettings):
 
     PRODUCTION_DOMAIN = 'localhost:8000'
     WEBSOCKET_HOST = 'localhost:8088'
-
-    @property
-    def DATABASES(self):  # noqa
-        return {
-            'default': {
-                'ENGINE': 'django.db.backends.sqlite3',
-                'NAME': os.path.join(self.SITE_ROOT, 'dev.db'),
-            }
-        }
 
     DONT_HIT_DB = False
 
@@ -56,12 +48,31 @@ class CommunityDevSettings(CommunityBaseSettings):
         logging['disable_existing_loggers'] = False
         return logging
 
+    @property
+    def DATABASES(self):  # noqa
+        return {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(self.SITE_ROOT, 'dev.db'),
+            }
+        }
+
 
 CommunityDevSettings.load_settings(__name__)
 
-if not os.environ.get('DJANGO_SETTINGS_SKIP_LOCAL', False):
-    try:
-        # pylint: disable=unused-wildcard-import
-        from .local_settings import *  # noqa
-    except ImportError:
-        pass
+import dj_database_url
+DATABASES['default'] =  dj_database_url.config()
+
+SECRET_KEY = os.environ.get('SECRET_KEY')
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+# DEBUG = False
+# from .local_settings import *
+
+# if not os.environ.get('DJANGO_SETTINGS_SKIP_LOCAL', False):
+#     try:
+#         # pylint: disable=unused-wildcard-import
+#           # noqa
+#     except ImportError:
+#         pass
