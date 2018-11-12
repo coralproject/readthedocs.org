@@ -73,6 +73,8 @@ if os.environ.get('REDIS_URL'):
     REDIS_URL = os.environ.get('REDIS_URL')
     BROKER_URL = REDIS_URL
     CELERY_RESULT_BACKEND = REDIS_URL
+    SLUMBER_USERNAME = 'coraladmin'
+    SLUMBER_PASSWORD = os.environ.get('SLUMBER_PASSWORD')
 
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
