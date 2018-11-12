@@ -10,8 +10,8 @@ class CommunityDevSettings(CommunityBaseSettings):
 
     """Settings for local development"""
 
-    PRODUCTION_DOMAIN = 'talk-documentation.herokuapp.com:8000'
-    WEBSOCKET_HOST = 'talk-documentation.herokuapp.com:8088'
+    PRODUCTION_DOMAIN = 'localhost:8000'
+    WEBSOCKET_HOST = 'localhost:8088'
     # USE_SUBDOMAIN = True
     READTHEDOCS = True
 
@@ -23,8 +23,8 @@ class CommunityDevSettings(CommunityBaseSettings):
 
     SLUMBER_USERNAME = 'test'
     SLUMBER_PASSWORD = 'test'  # noqa: ignore dodgy check
-    SLUMBER_API_HOST = 'http://talk-documentation.herokuapp.com:8000'
-    PUBLIC_API_URL = 'http://talk-documentation.herokuapp.com:8000'
+    SLUMBER_API_HOST = 'localhost:8000'
+    PUBLIC_API_URL = 'localhost:8000'
 
     BROKER_URL = 'redis://localhost:6379/0'
     CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
