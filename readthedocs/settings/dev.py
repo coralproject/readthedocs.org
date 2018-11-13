@@ -13,7 +13,7 @@ class CommunityDevSettings(CommunityBaseSettings):
     PRODUCTION_DOMAIN = 'talk-documentation.herokuapp.com'
     WEBSOCKET_HOST = 'talk-documentation.herokuapp.com:8088'
     USE_SUBDOMAIN = True
-    READTHEDOCS = True
+    READTHEDOCS = False
 
     DONT_HIT_DB = False
 
