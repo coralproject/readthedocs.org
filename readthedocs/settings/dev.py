@@ -23,7 +23,7 @@ class CommunityDevSettings(CommunityBaseSettings):
 
     SLUMBER_USERNAME = 'test'
     SLUMBER_PASSWORD = 'test'  # noqa: ignore dodgy check
-    SLUMBER_API_HOST = 'localhost'
+    SLUMBER_API_HOST = 'talk-documentation.herokuapp.com'
     PUBLIC_API_URL = 'https://{0}'.format(PRODUCTION_DOMAIN)
 
     BROKER_URL = 'redis://localhost:6379/0'
