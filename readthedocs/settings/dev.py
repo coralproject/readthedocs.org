@@ -12,7 +12,7 @@ class CommunityDevSettings(CommunityBaseSettings):
 
     PRODUCTION_DOMAIN = 'talk-documentation.herokuapp.com'
     WEBSOCKET_HOST = 'talk-documentation.herokuapp.com:8088'
-    # USE_SUBDOMAIN = True
+    USE_SUBDOMAIN = True
     READTHEDOCS = True
 
     DONT_HIT_DB = False
@@ -23,7 +23,7 @@ class CommunityDevSettings(CommunityBaseSettings):
 
     SLUMBER_USERNAME = 'test'
     SLUMBER_PASSWORD = 'test'  # noqa: ignore dodgy check
-    SLUMBER_API_HOST = 'talk-documentation.herokuapp.com:8000'
+    SLUMBER_API_HOST = 'localhost:8000'
     PUBLIC_API_URL = 'https://{0}'.format(PRODUCTION_DOMAIN)
 
     BROKER_URL = 'redis://localhost:6379/0'
@@ -61,6 +61,7 @@ class CommunityDevSettings(CommunityBaseSettings):
 
 
 CommunityDevSettings.load_settings(__name__)
+
 
 import dj_database_url
 DATABASES['default'] =  dj_database_url.config()
